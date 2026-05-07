@@ -9,7 +9,7 @@ export default function HeaderCTA() {
         <Phone size={14} />
         <span>00 00 00 00</span>
       </Link>
-      <Link className="bg-orange-500" href={''}>
+      <Link className="cta button-base" href={''}>
         {' '}
         Få tilbod
       </Link>
