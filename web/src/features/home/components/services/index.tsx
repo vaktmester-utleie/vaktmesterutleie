@@ -1,5 +1,6 @@
 import PageHeader from '@/components/page-header'
 import Container from '@/components/wrapper/container'
+import ServiceCard from './service-card'
 
 export default function Services() {
   return (
@@ -11,6 +12,7 @@ export default function Services() {
 "
         subtitle="Eit breitt spekter av tenester for privatpersonar og bedrifter i Bergensregionen."
       />
+      <ServiceCard />
     </Container>
   )
 }
