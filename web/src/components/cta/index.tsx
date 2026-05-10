@@ -8,7 +8,7 @@ type Props = {
 }
 export default function CTA({ subtitle, title, description }: Props) {
   return (
-    <Container className="bg-gray-100 py-20">
+    <Container className="bg-gray-100 py-40">
       <Container className="max-w-xl mx-auto  text-center flex flex-col gap-4">
         <p className="uppercase link-brand">{subtitle}</p>
         <p className="hero-title">{title}</p>

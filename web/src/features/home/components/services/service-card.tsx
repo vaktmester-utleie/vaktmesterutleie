@@ -12,7 +12,7 @@ export default async function ServiceCard() {
   const service: Service[] = await client.fetch(SERVICE_QUERY)
 
   return (
-    <Container className="grid grid-cols-3">
+    <Container className="grid grid-cols-3 gap-4">
       {service.map((data) => (
         <Card key={data._id}>
           <Image
@@ -34,7 +34,7 @@ export default async function ServiceCard() {
               ))}
             </Container>
 
-            <NavigationLink className="py-8" href="">
+            <NavigationLink className="my-8  self-start" href="">
               {data.cta}
             </NavigationLink>
           </Container>
