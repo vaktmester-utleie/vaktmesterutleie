@@ -6,7 +6,10 @@ export default function DesktopNavigation() {
     <nav className="flex justify-between w-ful ">
       <ul className="flex gap-4">
         {navigationItems.map((item) => (
-          <li key={item.id}>
+          <li
+            className="text-sm text-gray-600 hover:text-gray-900"
+            key={item.id}
+          >
             <Link href={item.href}>{item.label}</Link>
           </li>
         ))}

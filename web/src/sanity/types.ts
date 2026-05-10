@@ -6,6 +6,7 @@ export type Service = {
   image: ImageWithAlt
   tags: string[]
   description: string
+  cta: string
 }
 
 type ImageWithAlt = {

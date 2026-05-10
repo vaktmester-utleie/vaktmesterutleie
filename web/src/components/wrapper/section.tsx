@@ -3,10 +3,19 @@ import { cn } from '@/lib/utils'
 type Props = {
   children: Readonly<React.ReactNode>
   className?: string
+  constraint?: boolean
 }
-export default function Section({ children, className }: Props) {
+export default function Section({
+  children,
+  className,
+  constraint = false,
+}: Props) {
   return (
-    <section className={(cn(className), 'max-w-6xl w-full mx-auto')}>
+    <section
+      className={cn(className, ' w-full ', {
+        'max-w-6xl mx-auto': constraint,
+      })}
+    >
       {children}
     </section>
   )

@@ -14,10 +14,7 @@ export const serviceSchema = defineType({
       type: 'array',
       of: [defineArrayMember({ type: 'string' })],
     }),
+
+    defineField({ name: 'cta', title: 'CTA-tekst', type: 'string' }),
   ],
 })
-/* 
-
-Vaktmeistertjenester (vedlikehold, reparasjon, montering, snekring)
-Utstyrsutleige (tilhengar, stillas, stige, verktøy)
-Droneinspeksjon (tak, fasade, eigedom — foto og kartlegging) */

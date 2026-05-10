@@ -6,10 +6,8 @@ type Props = {
 }
 export default function PageHeader({ label, title, subtitle }: Props) {
   return (
-    <Container>
-      <span className=" uppercase text-brand-500 text-xs font-medium">
-        {label}
-      </span>
+    <Container className="flex flex-col gap-2 mb-6">
+      <span className="link-brand uppercase">{label}</span>
       <p className="text-2xl title">{title}</p>
       {subtitle && <p className="subtitle">{subtitle}</p>}
     </Container>
