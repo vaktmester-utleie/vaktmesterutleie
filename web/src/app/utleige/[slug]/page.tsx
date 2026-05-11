@@ -1,3 +1,4 @@
+import PageHeader from '@/components/page-header'
 import Section from '@/components/wrapper/section'
 import Rental from '@/features/utleige/components/utleige'
 import RentalCard from '@/features/utleige/components/utleige/rental-card'
@@ -13,7 +14,12 @@ export default async function Page({ params }: Params) {
 
   return (
     <Section constraint className="page-section">
-      <Hero />
+      <PageHeader
+        label="utleigekatalog"
+        title="Lei utstyr enkelt og rimeleg
+  "
+        subtitle="Tilhengarar, stillas, stiegar og verktøy til gode prisar. Hent sjølv  eller avtal levering."
+      />
       <Rental>
         <RentalCard slug={slug} />
       </Rental>

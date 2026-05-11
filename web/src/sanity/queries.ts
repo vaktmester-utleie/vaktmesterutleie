@@ -11,3 +11,7 @@ export const CATEGORY_QUERY = defineQuery(
 export const RENTAL_BY_CATEGORY_QUERY = defineQuery(
   `*[_type == "rental" && category->slug.current == $slug]{_id, title, image, available, pricePerDay, pricePerWeek, specs}`
 )
+
+export const RENTAL_BY_ID_QUERY = defineQuery(
+  `*[_type == "rental" && _id == $id][0]{_id, title, image, available, pricePerDay, pricePerWeek, specs, description}`
+)

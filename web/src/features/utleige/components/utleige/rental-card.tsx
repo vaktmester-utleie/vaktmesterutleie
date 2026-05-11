@@ -37,7 +37,9 @@ export default async function RentalCard({ slug }: { slug: string }) {
                   </p>
                 )}
               </Container>
-              <NavigationLink href="">Bestill</NavigationLink>
+              <NavigationLink href={`/kontakt?utstyr=${data.title}`}>
+                Bestill
+              </NavigationLink>
             </Container>
           </Container>
         </Card>
