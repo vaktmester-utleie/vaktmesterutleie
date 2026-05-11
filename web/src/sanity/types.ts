@@ -9,7 +9,28 @@ export type Service = {
   cta: string
 }
 
-type ImageWithAlt = {
+export type ImageWithAlt = {
   image: SanityImageSource
   alt?: string
+}
+
+type Slug = {
+  current: string
+}
+
+export type Category = {
+  _id: string
+  title: string
+  image: ImageWithAlt
+  slug: Slug
+}
+
+export type Rental = {
+  _id: string
+  title: string
+  image: ImageWithAlt
+  specs: string | null
+  available: boolean
+  pricePerDay: number | null
+  pricePerWeek: number | null
 }
