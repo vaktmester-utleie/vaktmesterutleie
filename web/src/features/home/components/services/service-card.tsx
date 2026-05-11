@@ -1,7 +1,6 @@
 import Card from '@/components/card'
 import NavigationLink from '@/components/navigation-link'
 import Pill from '@/components/pill'
-import Container from '@/components/wrapper/container'
 import { client } from '@/sanity/client'
 import { SERVICE_QUERY } from '@/sanity/queries'
 import { Service } from '@/sanity/types'
@@ -13,22 +12,18 @@ export default async function ServiceCard() {
     <>
       {service.map((data) => (
         <Card key={data._id} image={data.image}>
-          <Container>
+          <div className="flex-1">
             <p className="card-title">{data.title}</p>
             <p className="card-subtitle">{data.description}</p>
-          </Container>
-
-          <Container>
-            <Container className="flex gap-1 flex-wrap">
+            <div className="flex gap-1 flex-wrap mt-3">
               {data.tags.map((t, i) => (
                 <Pill key={i}>{t}</Pill>
               ))}
-            </Container>
-
-            <NavigationLink href="" className="absolute bottom-5  z-[1000]">
-              {data.cta}
-            </NavigationLink>
-          </Container>
+            </div>
+          </div>
+          <NavigationLink href="" className="mt-auto">
+            {data.cta}
+          </NavigationLink>
         </Card>
       ))}
     </>
