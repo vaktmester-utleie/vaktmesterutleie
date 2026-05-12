@@ -4,24 +4,28 @@ import ServiceForm from './service-form'
 import RentalForm from './rental-form'
 import Container from '../wrapper/container'
 import { Button } from '../ui/button'
-
+import { Truck, Wrench } from 'lucide-react'
 export default function FormWrapper() {
   const [showForm, setShowForm] = useState(false)
 
   return (
-    <Container>
-      <Container className="bg-gray-200 rounded-md p-1">
+    <Container className="max-w-4xl">
+      <Container className="flex gap-2">
         <Button
+          className="grow cursor-pointer"
           onClick={() => setShowForm(false)}
-          variant={!showForm ? 'default' : 'ghost'}
+          variant={!showForm ? 'outline' : 'ghost'}
         >
-          Utleigeførespurnad
+          <Truck />
+          <span> Utleigeførespurnad</span>
         </Button>
         <Button
+          className="grow cursor-pointer"
           onClick={() => setShowForm(true)}
-          variant={showForm ? 'default' : 'ghost'}
+          variant={showForm ? 'outline' : 'ghost'}
         >
-          Vaktmeister / Drone
+          <Wrench />
+          <span> Vaktmeister / Drone</span>
         </Button>
       </Container>
       <Suspense fallback={null}>

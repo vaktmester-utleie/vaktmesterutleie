@@ -13,6 +13,9 @@ import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import { Textarea } from '../ui/textarea'
 import FormInput from './form-input'
 import { useSearchParams } from 'next/navigation'
+import Container from '../wrapper/container'
+import FormButton from './form-button'
+import { toast } from 'sonner'
 
 const schema = z.object({
   name: z.string().min(1, 'Namn er påkravd'),
@@ -40,102 +43,112 @@ export default function RentalForm() {
     },
   })
 
-  const onSubmit: SubmitHandler<Schema> = (data) =>
+  const onSubmit: SubmitHandler<Schema> = (data) => {
     console.log({ ...data, fromDate, toDate })
-
+    toast.success('Takk! Me tek kontakt så snart som mogleg.')
+  }
   return (
-    <form
-      className="max-w-4xl flex flex-col gap-4"
-      onSubmit={handleSubmit(onSubmit)}
-    >
-      <FieldGroup className="flex flex-row gap-4">
+    <Container>
+      <Container>
+        <p className="card-title">Lei utstyr</p>
+        <p className="card-subtitle">
+          Fortel oss kva du vil leige, og me kjem tilbake med pris og
+          tilgjengelegheit.
+        </p>
+      </Container>
+      <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
+        <FieldGroup className="flex flex-row gap-4">
+          <FormInput
+            placeholder="Ditt fulle namn"
+            label="Namn*"
+            htmlFor="name"
+            {...register('name')}
+            error={errors.name?.message}
+          />
+          <FormInput
+            placeholder="+47 ..."
+            label="Telefon*"
+            type="tel"
+            htmlFor="telephone"
+            {...register('telephone')}
+            error={errors.telephone?.message}
+          />
+        </FieldGroup>
+
         <FormInput
-          placeholder="Ditt fulle namn"
-          label="Namn*"
-          htmlFor="name"
-          {...register('name')}
-          error={errors.name?.message}
+          type="email"
+          htmlFor="email"
+          label="E-post"
+          placeholder="din@epost.no"
+          {...register('email')}
+          error={errors.email?.message}
         />
+
         <FormInput
-          placeholder="+47 ..."
-          label="Telefon*"
-          htmlFor="telephone"
-          {...register('telephone')}
-          error={errors.telephone?.message}
+          type="text"
+          htmlFor="rental"
+          label="Kva utstyr vil du leige?*"
+          placeholder="T.d. tilhengar, stillas, stige..."
+          {...register('rental')}
+          error={errors.rental?.message}
         />
-      </FieldGroup>
 
-      <FormInput
-        type="email"
-        htmlFor="email"
-        label="E-post"
-        placeholder="din@epost.no"
-        {...register('email')}
-        error={errors.email?.message}
-      />
+        <FieldGroup className="flex flex-row gap-4">
+          <Field className="flex flex-col gap-1 flex-1">
+            <FieldLabel>Frå dato</FieldLabel>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="justify-start font-normal text-left"
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {fromDate ? format(fromDate, 'dd.MM.yyyy') : 'dd/mm/yyyy'}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0">
+                <Calendar
+                  mode="single"
+                  selected={fromDate}
+                  onSelect={setFromDate}
+                />
+              </PopoverContent>
+            </Popover>
+          </Field>
 
-      <FormInput
-        type="text"
-        htmlFor="rental"
-        label="Kva utstyr vil du leige?*"
-        placeholder="T.d. tilhengar, stillas, stige..."
-        {...register('rental')}
-        error={errors.rental?.message}
-      />
+          <Field className="flex flex-col gap-1 flex-1">
+            <FieldLabel>Til dato</FieldLabel>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="justify-start font-normal text-left"
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {toDate ? format(toDate, 'dd.MM.yyyy') : 'dd/mm/yyyy'}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0">
+                <Calendar
+                  mode="single"
+                  selected={toDate}
+                  onSelect={setToDate}
+                />
+              </PopoverContent>
+            </Popover>
+          </Field>
+        </FieldGroup>
 
-      <FieldGroup className="flex flex-row gap-4">
-        <Field className="flex flex-col gap-1 flex-1">
-          <FieldLabel>Frå dato</FieldLabel>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                variant="outline"
-                className="justify-start font-normal text-left"
-              >
-                <CalendarIcon className="mr-2 h-4 w-4" />
-                {fromDate ? format(fromDate, 'dd.MM.yyyy') : 'dd/mm/yyyy'}
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-0">
-              <Calendar
-                mode="single"
-                selected={fromDate}
-                onSelect={setFromDate}
-              />
-            </PopoverContent>
-          </Popover>
+        <Field>
+          <FieldLabel htmlFor="message">Melding</FieldLabel>
+          <Textarea
+            placeholder="Noko meir me bør vite?"
+            {...register('message')}
+          />
         </Field>
 
-        <Field className="flex flex-col gap-1 flex-1">
-          <FieldLabel>Til dato</FieldLabel>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                variant="outline"
-                className="justify-start font-normal text-left"
-              >
-                <CalendarIcon className="mr-2 h-4 w-4" />
-                {toDate ? format(toDate, 'dd.MM.yyyy') : 'dd/mm/yyyy'}
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-0">
-              <Calendar mode="single" selected={toDate} onSelect={setToDate} />
-            </PopoverContent>
-          </Popover>
-        </Field>
-      </FieldGroup>
-
-      <Field>
-        <FieldLabel htmlFor="message">Melding</FieldLabel>
-        <Textarea
-          placeholder="Noko meir me bør vite?"
-          {...register('message')}
-        />
-      </Field>
-
-      <button type="submit" className="btn-primary py-3">
-        Send utleigeførespurnad →
-      </button>
-    </form>
+        <FormButton label="Send utleigeførespurnad" />
+      </form>
+    </Container>
   )
 }
