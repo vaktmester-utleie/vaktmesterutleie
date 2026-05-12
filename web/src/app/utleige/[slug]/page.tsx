@@ -12,16 +12,20 @@ export default async function Page({ params }: Params) {
   const { slug } = await params
 
   return (
-    <Section constraint className="page-section min-h-[80vh]">
-      <PageHeader
-        label="utleigekatalog"
-        title="Lei utstyr enkelt og rimeleg
+    <Section className="page-section min-h-screen">
+      <Section constraint>
+        <PageHeader
+          label="utleigekatalog"
+          title="Lei utstyr enkelt og rimeleg
   "
-        subtitle="Tilhengarar, stillas, stiegar og verktøy til gode prisar. Hent sjølv  eller avtal levering."
-      />
-      <CardContainer className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        <RentalCard slug={slug} />
-      </CardContainer>
+          subtitle="Tilhengarar, stillas, stiegar og verktøy til gode prisar. Hent sjølv  eller avtal levering."
+        />
+      </Section>
+      <Section constraint>
+        <CardContainer className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          <RentalCard slug={slug} />
+        </CardContainer>
+      </Section>
     </Section>
   )
 }
