@@ -9,6 +9,11 @@ export const serviceSchema = defineType({
     defineField({ name: 'description', title: 'Beskriving', type: 'text' }),
     defineField({ name: 'image', title: 'Bilete', type: 'imageWithAlt' }),
     defineField({
+      name: 'href',
+      title: 'Href',
+      type: 'string',
+    }),
+    defineField({
       name: 'tags',
       title: 'Taggar',
       type: 'array',
