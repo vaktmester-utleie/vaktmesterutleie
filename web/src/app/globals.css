@@ -169,6 +169,6 @@
   }
 
   .page-section {
-    @apply flex flex-col gap-24 pt-10;
+    @apply flex flex-col gap-24 pt-12;
   }
 }

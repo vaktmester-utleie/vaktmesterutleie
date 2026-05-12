@@ -12,7 +12,7 @@ export default async function Page({ params }: Params) {
   const { slug } = await params
 
   return (
-    <Section constraint className="page-section">
+    <Section constraint className="page-section min-h-[80vh]">
       <PageHeader
         label="utleigekatalog"
         title="Lei utstyr enkelt og rimeleg

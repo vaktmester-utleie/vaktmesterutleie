@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Page() {
   return (
-    <Section className=" page-section  min-h-[80vh] flex items-center justify-center">
+    <Section className="min-h-[80vh] flex items-center justify-center">
       <Section className="grid grid-cols-1 sm:grid-cols-2 gap-4" constraint>
         <Image
           className="rounded-lg shadow-sm"

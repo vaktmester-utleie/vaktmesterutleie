@@ -6,7 +6,7 @@ import ContactInfo from '@/features/kontakt/components/contact-info'
 
 export default function Page() {
   return (
-    <Section className="page-section">
+    <Section className=" min-h-[80vh] page-section">
       <Section constraint>
         {' '}
         <PageHeader
