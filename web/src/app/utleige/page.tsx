@@ -5,7 +5,7 @@ import RentalCategoryCard from '@/features/utleige/components/utleige/rental-cat
 
 export default function Page() {
   return (
-    <Section className="page-section min-h-[80vh]">
+    <Section className="page-section min-h-screen">
       <Section constraint>
         <PageHeader
           label="utleigekatalog"
