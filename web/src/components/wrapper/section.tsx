@@ -13,7 +13,7 @@ export default function Section({
   return (
     <section
       className={cn(className, ' w-full ', {
-        'max-w-6xl mx-auto': constraint,
+        'max-w-6xl mx-auto px-4': constraint,
       })}
     >
       {children}

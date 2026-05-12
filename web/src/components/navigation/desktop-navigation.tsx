@@ -3,7 +3,7 @@ import { navigationItems } from './navigation-items'
 
 export default function DesktopNavigation() {
   return (
-    <nav className="flex justify-between w-ful ">
+    <nav className="hidden md:flex justify-between">
       <ul className="flex gap-4">
         {navigationItems.map((item) => (
           <li

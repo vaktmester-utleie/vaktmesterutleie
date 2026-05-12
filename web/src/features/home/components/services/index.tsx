@@ -13,7 +13,7 @@ export default function Services() {
 "
         subtitle="Eit breitt spekter av tenester for privatpersonar og bedrifter i Bergensregionen."
       />
-      <CardContainer>
+      <CardContainer className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         <ServiceCard />
       </CardContainer>
     </Container>
