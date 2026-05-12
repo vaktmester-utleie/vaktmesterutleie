@@ -9,7 +9,7 @@ export default function FormWrapper() {
   const [showForm, setShowForm] = useState(false)
 
   return (
-    <Container className="max-w-4xl">
+    <Container className="max-w-3xl grow">
       <Container className="flex gap-2">
         <Button
           className="grow cursor-pointer"
