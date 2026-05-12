@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { Button } from '../ui/button'
 import Container from '../wrapper/container'
+import { Send, Phone } from 'lucide-react'
+
 type Props = {
   subtitle: string
   title: string
@@ -15,10 +17,18 @@ export default function CTA({ subtitle, title, description }: Props) {
         <p>{description}</p>
 
         <Container className="flex gap-4  items-center justify-center">
-          <Link className="btn-primary" href={''}>
-            Send førespurnad
-          </Link>
-          <Button variant="outline">Ring oss direkte</Button>
+          <Button asChild>
+            <Link href={''}>
+              <Send />
+              Send førespurnad
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="tel:+4747177466">
+              <Phone />
+              Ring oss direkte
+            </Link>
+          </Button>
         </Container>
       </Container>
     </Container>

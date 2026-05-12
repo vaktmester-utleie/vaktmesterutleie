@@ -2,6 +2,7 @@ import { SanityImageSource } from '@sanity/image-url'
 
 export type Service = {
   _id: string
+  href: string
   title: string
   image: ImageWithAlt
   tags: string[]

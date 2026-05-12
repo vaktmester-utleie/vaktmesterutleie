@@ -19,7 +19,7 @@ export default function Card({
   return (
     <div
       className={cn(
-        'border rounded-md flex flex-col group hover:shadow-sm transition duration-150 overflow-hidden',
+        'border rounded-lg flex flex-col group hover:shadow-sm transition duration-150 overflow-hidden relative',
         className
       )}
     >

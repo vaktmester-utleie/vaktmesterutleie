@@ -1,7 +1,7 @@
 import { defineQuery } from 'next-sanity'
 
 export const SERVICE_QUERY = defineQuery(
-  `*[_type == 'service']{_id, title, image, tags, description, cta}`
+  `*[_type == 'service']{_id, title, image, tags, description, cta, href}`
 )
 
 export const CATEGORY_QUERY = defineQuery(

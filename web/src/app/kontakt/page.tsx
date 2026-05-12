@@ -6,7 +6,7 @@ import ContactInfo from '@/features/kontakt/components/contact-info'
 
 export default function Page() {
   return (
-    <Section>
+    <Section className="page-section">
       <Section constraint>
         {' '}
         <PageHeader

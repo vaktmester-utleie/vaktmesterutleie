@@ -21,7 +21,7 @@ export default async function ServiceCard() {
               ))}
             </div>
           </div>
-          <NavigationLink href="" className="mt-auto">
+          <NavigationLink href={data.href ? data.href : ''} className="mt-auto">
             {data.cta}
           </NavigationLink>
         </Card>

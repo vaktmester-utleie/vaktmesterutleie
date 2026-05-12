@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { MapPin, Phone, Mail } from 'lucide-react'
+import { navigationItems } from '../navigation/navigation-items'
+import Logo from '../header/logo'
 
 export default function Footer() {
   return (
@@ -7,67 +9,42 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-brand-500 rounded-md flex items-center justify-center text-white font-bold text-sm">
-                S
-              </div>
-              <div>
-                <p className="font-semibold text-sm">Sørås</p>
-                <p className="text-xs text-gray-500">Vaktmesterutleie</p>
-              </div>
+            <div>
+              <Logo variant="small" />
             </div>
-            <p className="text-sm text-gray-500">
-              Vaktmeister-, utleige- og droneinspeksjonstenester i
-              Bergensområdet sidan 2019.
-            </p>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <p className="eyebrow">Tenester</p>
-            <div className="flex flex-col gap-2">
-              <Link
-                href="/utleige"
-                className="text-sm text-gray-600 hover:text-gray-900"
-              >
-                Utleige
-              </Link>
-              <Link
-                href="/vaktmeister"
-                className="text-sm text-gray-600 hover:text-gray-900"
-              >
-                Vaktmeister
-              </Link>
-              <Link
-                href="/droneinspeksjon"
-                className="text-sm text-gray-600 hover:text-gray-900"
-              >
-                Droneinspeksjon
-              </Link>
-              <Link
-                href="/prosjekt"
-                className="text-sm text-gray-600 hover:text-gray-900"
-              >
-                Prosjekt
-              </Link>
-            </div>
+          <div>
+            <p className="eyebrow mb-3">Tenester</p>
+
+            <ul className="flex flex-col gap-1">
+              {navigationItems.map((item) => (
+                <li
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                  key={item.id}
+                >
+                  <Link href={item.href}> {item.label}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="flex flex-col gap-3">
             <p className="eyebrow">Kontakt</p>
             <div className="flex flex-col gap-2">
               <div className="flex items-start gap-2 text-sm text-gray-600">
-                <MapPin className="w-4 h-4 mt-0.5 text-brand-500 shrink-0" />
+                <MapPin className="w-4 h-4 mt-0.5  shrink-0" />
                 <span>
                   Vevleheiane 3<br />
                   5281 Valestrandfossen
                 </span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Phone className="w-4 h-4 text-brand-500 shrink-0" />
+                <Phone className="w-4 h-4  shrink-0" />
                 <span>+47 471 77 466</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Mail className="w-4 h-4 text-brand-500 shrink-0" />
+                <Mail className="w-4 h-4  shrink-0" />
                 <span>post@vaktmesterutleie.no</span>
               </div>
             </div>

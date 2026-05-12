@@ -1,8 +1,7 @@
+import CardContainer from '@/components/card/card-container'
 import PageHeader from '@/components/page-header'
 import Section from '@/components/wrapper/section'
-import Rental from '@/features/utleige/components/utleige'
 import RentalCard from '@/features/utleige/components/utleige/rental-card'
-import Hero from '@/features/utleige/hero'
 
 type Params = {
   params: {
@@ -20,9 +19,9 @@ export default async function Page({ params }: Params) {
   "
         subtitle="Tilhengarar, stillas, stiegar og verktøy til gode prisar. Hent sjølv  eller avtal levering."
       />
-      <Rental>
+      <CardContainer className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         <RentalCard slug={slug} />
-      </Rental>
+      </CardContainer>
     </Section>
   )
 }
