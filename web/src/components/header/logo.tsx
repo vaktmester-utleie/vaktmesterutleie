@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
-  variant: 'large' | 'small'
+  variant?: 'large' | 'small'
 }
 export default function Logo({ variant = 'large' }: Props) {
   return (
