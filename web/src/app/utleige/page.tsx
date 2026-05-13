@@ -2,10 +2,15 @@ import CardContainer from '@/components/card/card-container'
 import PageHeader from '@/components/page-header'
 import Section from '@/components/wrapper/section'
 import RentalCategoryCard from '@/features/utleige/components/utleige/rental-categories-card'
-
+import { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Utleige',
+  description:
+    'Lei tilhengar, stillas, stiegar og verktøy til gode prisar. Fleksible leigeavtalar og rask utlevering.',
+}
 export default function Page() {
   return (
-    <Section className="page-section min-h-screen">
+    <Section className="page-section min-h-screen pb-40">
       <Section constraint>
         <PageHeader
           label="utleigekatalog"

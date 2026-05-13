@@ -2,7 +2,11 @@ import CardContainer from '@/components/card/card-container'
 import PageHeader from '@/components/page-header'
 import Section from '@/components/wrapper/section'
 import RentalCard from '@/features/utleige/components/utleige/rental-card'
-
+import { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Utleige',
+  description: 'Lei utstyr frå Vaktmesterutleie.',
+}
 type Params = {
   params: {
     slug: string
@@ -12,7 +16,7 @@ export default async function Page({ params }: Params) {
   const { slug } = await params
 
   return (
-    <Section className="page-section min-h-screen">
+    <Section className="page-section min-h-screen pb-40">
       <Section constraint>
         <PageHeader
           label="utleigekatalog"

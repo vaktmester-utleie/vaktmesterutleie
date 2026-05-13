@@ -3,7 +3,11 @@ import PageHeader from '@/components/page-header'
 import Container from '@/components/wrapper/container'
 import Section from '@/components/wrapper/section'
 import ContactInfo from '@/features/kontakt/components/contact-info'
-
+import { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Kontakt',
+  description: 'Ta kontakt for uforpliktande tilbod.',
+}
 export default function Page() {
   return (
     <Section className="min-h-screen page-section">

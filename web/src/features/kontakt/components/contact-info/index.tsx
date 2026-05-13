@@ -8,12 +8,12 @@ const PHONE = '+47 471 77 466'
 export default function ContactInfo() {
   return (
     <Container className="flex flex-col gap-4">
-      <Container className="border rounded-xl p-6 flex flex-col gap-5">
+      <Container className="border rounded-md p-6 flex flex-col gap-5">
         <p className="font-semibold text-base">Kontaktinfo</p>
 
         <Container className="flex flex-col gap-4">
           <Container className="flex items-start gap-3">
-            <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 bg-orange-50 rounded-md flex items-center justify-center shrink-0">
               <MapPin className="w-4 h-4 text-brand-500" />
             </div>
             <div>
@@ -24,7 +24,7 @@ export default function ContactInfo() {
           </Container>
 
           <Container className="flex items-start gap-3">
-            <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 bg-orange-50 rounded-md flex items-center justify-center shrink-0">
               <Phone className="w-4 h-4 text-brand-500" />
             </div>
             <div>
@@ -34,7 +34,7 @@ export default function ContactInfo() {
           </Container>
 
           <Container className="flex items-start gap-3">
-            <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 bg-orange-50 rounded-md flex items-center justify-center shrink-0">
               <Mail className="w-4 h-4 text-brand-500" />
             </div>
             <div>
@@ -44,7 +44,7 @@ export default function ContactInfo() {
           </Container>
 
           <Container className="flex items-start gap-3">
-            <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 bg-orange-50 rounded-md flex items-center justify-center shrink-0">
               <Clock className="w-4 h-4 text-brand-500" />
             </div>
             <div>
@@ -56,13 +56,13 @@ export default function ContactInfo() {
         </Container>
       </Container>
 
-      <Container className="border rounded-lg p-6 bg-orange-50 flex flex-col items-center gap-3 text-center">
+      <Container className="border rounded-md p-6 bg-orange-50 flex flex-col items-center gap-3 text-center">
         <p className="font-semibold">Hastar det?</p>
         <p className="text-sm text-gray-500">Ring oss direkte for rask hjelp</p>
         <Button asChild>
           <Link
             href={`tel:${PHONE.replace(/\s/g, '')}`}
-            className="btn-primary flex items-center gap-2 px-6 py-2 rounded-lg w-full justify-center"
+            className="btn-primary flex items-center gap-2 px-6 py-2 rounded-md w-full justify-center"
           >
             <Phone className="w-4 h-4" />
             {PHONE}

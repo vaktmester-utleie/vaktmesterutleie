@@ -157,10 +157,12 @@ export default function Footer() {
             <p className="text-xs text-gray-400">
               Utvikla av{' '}
               <Link
-                href="https://linkedin.com/in/jonathanmjos"
+                href="https://jonathanmjos.dev"
+                target="_blank"
+                rel="noopener"
                 className="hover:text-gray-600"
               >
-                Jonathan Mjøs
+                Jonathan Braaten Mjøs
               </Link>
             </p>
           </div>

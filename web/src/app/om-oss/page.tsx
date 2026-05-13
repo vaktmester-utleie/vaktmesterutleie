@@ -1,7 +1,12 @@
 import Container from '@/components/wrapper/container'
 import Section from '@/components/wrapper/section'
+import { Metadata } from 'next'
 import Image from 'next/image'
-
+export const metadata: Metadata = {
+  title: 'Om oss',
+  description:
+    'Me er eit lokalt firma frå Osterøy med tømrarbakgrunn og brei erfaring innan vaktmeistertenester og utstyrleige.',
+}
 export default function Page() {
   return (
     <Section className="min-h-screen flex items-center justify-center">

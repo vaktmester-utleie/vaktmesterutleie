@@ -2,10 +2,15 @@ import CardContainer from '@/components/card/card-container'
 import PageHeader from '@/components/page-header'
 import Section from '@/components/wrapper/section'
 import ProjectCard from '@/features/projects/components/project-card'
-
+import { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Prosjekt',
+  description:
+    'Sjå tidlegare arbeid — renovering, vedlikehald og droneinspeksjon i Osterøy og Bergen.',
+}
 export default function Page() {
   return (
-    <Section className="page-section min-h-screen">
+    <Section className="page-section min-h-screen pb-40">
       <Section constraint>
         <PageHeader
           title="Prosjektgalleri"
