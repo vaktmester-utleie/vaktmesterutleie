@@ -10,25 +10,24 @@ export async function POST(req: Request) {
   const isUtleige = type === 'utleige'
 
   const subject = isUtleige
-    ? `Utleigeførespurnad: ${body.utstyr} - ${body.name}`
-    : `Førespurnad: ${body.typeteneste} - ${body.name}`
-
+    ? `Utleigeførespurnad: ${body.rental ?? 'ukjent utstyr'} - ${body.name}`
+    : `Førespurnad: ${body.service ?? 'ukjent teneste'} - ${body.name}`
   const text = isUtleige
     ? `
-Namn: ${body.name}
-Telefon: ${body.telephone}
+Namn: ${body.name ?? '-'}
+Telefon: ${body.telephone ?? '-'}
 E-post: ${body.email ?? '-'}
-Utstyr: ${body.rental}
+Utstyr: ${body.rental ?? '-'}
 Frå: ${body.fraDato ?? '-'}
 Til: ${body.tilDato ?? '-'}
 Melding: ${body.message ?? '-'}
   `.trim()
     : `
-Namn: ${body.name}
-Telefon: ${body.telephone}
+Namn: ${body.name ?? '-'}
+Telefon: ${body.telephone ?? '-'}
 E-post: ${body.email ?? '-'}
-Type teneste: ${body.service}
-Oppdrag: ${body.message}
+Type teneste: ${body.service ?? '-'}
+Oppdrag: ${body.message ?? '-'}
   `.trim()
 
   try {
