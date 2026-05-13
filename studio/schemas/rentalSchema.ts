@@ -11,11 +11,13 @@ export const rentalSchema = defineType({
       type: 'reference',
       to: [{ type: 'category' }],
       title: 'Kategori',
+      validation: (r) => r.required(),
     }),
     defineField({
       name: 'available',
       type: 'boolean',
       title: 'Ledig for utleige',
+      validation: (r) => r.required(),
     }),
     defineField({
       name: 'pricePerDay',
@@ -27,7 +29,12 @@ export const rentalSchema = defineType({
       type: 'number',
       title: 'Pris per veke (kr)',
     }),
-    defineField({ name: 'specs', type: 'string', title: 'Spesifikasjonar' }),
+    defineField({
+      name: 'specs',
+      type: 'string',
+      title: 'Spesifikasjonar',
+      validation: (r) => r.required(),
+    }),
     defineField({ name: 'image', type: 'imageWithAlt', title: 'Bilete' }),
   ],
 })

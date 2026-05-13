@@ -15,3 +15,7 @@ export const RENTAL_BY_CATEGORY_QUERY = defineQuery(
 export const RENTAL_BY_ID_QUERY = defineQuery(
   `*[_type == "rental" && _id == $id][0]{_id, title, image, available, pricePerDay, pricePerWeek, specs, description}`
 )
+
+export const PROJECT_QUERY = defineQuery(
+  `*[_type == 'project']{_id, title, image, description}`
+)

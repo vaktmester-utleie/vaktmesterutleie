@@ -35,3 +35,10 @@ export type Rental = {
   pricePerDay: number | null
   pricePerWeek: number | null
 }
+
+export type Project = {
+  _id: string
+  title: string
+  image: ImageWithAlt[]
+  description: string
+}

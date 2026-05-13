@@ -6,7 +6,12 @@ export const serviceSchema = defineType({
   type: 'document',
   fields: [
     defineField({ name: 'title', title: 'Tittel', type: 'string' }),
-    defineField({ name: 'description', title: 'Beskriving', type: 'text' }),
+    defineField({
+      name: 'description',
+      title: 'Beskriving',
+      type: 'text',
+      validation: (r) => r.required(),
+    }),
     defineField({ name: 'image', title: 'Bilete', type: 'imageWithAlt' }),
     defineField({
       name: 'href',

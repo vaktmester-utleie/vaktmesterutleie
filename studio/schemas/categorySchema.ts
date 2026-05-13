@@ -11,6 +11,7 @@ export const categorySchema = defineType({
       title: 'Slug (URL)',
       type: 'slug',
       options: { source: 'title' },
+      validation: (r) => r.required(),
     }),
     defineField({ name: 'image', title: 'Bilete', type: 'imageWithAlt' }),
   ],

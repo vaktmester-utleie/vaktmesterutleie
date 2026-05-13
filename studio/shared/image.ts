@@ -5,7 +5,19 @@ export const image = defineType({
   title: 'Bilde',
   type: 'object',
   fields: [
-    defineField({ name: 'image', type: 'image' }),
-    defineField({ name: 'alt', type: 'string', title: 'Alt-tekst' }),
+    defineField({
+      name: 'image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'alt',
+      type: 'string',
+      title: 'Alt-tekst',
+      validation: (r) => r.required(),
+      description: 'Alternativ tekst for skjermlesere',
+    }),
   ],
 })
