@@ -4,21 +4,19 @@ import { cn } from '@/lib/utils'
 
 type Props = {
   children: React.ReactNode
-  href: string
   className?: string
 }
-export default function NavigationLink({ children, href, className }: Props) {
+export default function NavigationLink({ children, className }: Props) {
   return (
-    <Link
+    <span
       className={cn(
         className,
         'text-brand-500 text-xs font-bold tracking-widest flex items-center gap-2'
       )}
-      href={href}
     >
       {children}
 
       <ArrowRight size={16} />
-    </Link>
+    </span>
   )
 }

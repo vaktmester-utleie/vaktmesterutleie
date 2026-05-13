@@ -5,44 +5,42 @@ import { Image } from 'next-sanity/image'
 
 type Props = {
   children: React.ReactNode
-  padding?: boolean
   className?: string
   image: ImageWithAlt
+  imgSize?: boolean
 }
 
-export default function Card({
-  children,
-  padding = false,
-  className,
-  image,
-}: Props) {
+export default function Card({ children, className, image, imgSize }: Props) {
   return (
     <div
       className={cn(
-        'border rounded-lg flex flex-col group hover:shadow-sm transition duration-150 overflow-hidden relative',
+        'rounded-md border border-neutral-200 overflow-hidden relative hover:shadow-sm transition',
         className
       )}
     >
       {image ? (
         <Image
-          className="group-hover:scale-105 transition duration-150 h-[260px] w-full object-cover shrink-0"
+          className={cn('h-[260px] w-full object-cover shrink-0', {
+            'h-[200px]': imgSize,
+          })}
           src={urlFor(image.image).width(800).url()}
           alt={image.alt ? (image.alt as string) : 'Alternativ tekst'}
           width={500}
           height={500}
         />
       ) : (
-        <div className="h-[260px] w-full bg-gray-100 flex items-center justify-center shrink-0">
+        <div
+          className={cn(
+            'h-[260px] w-full bg-gray-100 flex items-center justify-center shrink-0',
+            {
+              'h-[200px]': imgSize,
+            }
+          )}
+        >
           <span className="text-gray-400 text-sm">Ingen bilete</span>
         </div>
       )}
-      <div
-        className={cn('flex flex-col flex-1 gap-4 px-4 pt-4 pb-4', {
-          'p-4': padding,
-        })}
-      >
-        {children}
-      </div>
+      {children}
     </div>
   )
 }

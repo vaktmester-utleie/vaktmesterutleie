@@ -1,9 +1,11 @@
 import Card from '@/components/card'
 import NavigationLink from '@/components/navigation-link'
 import Pill from '@/components/pill'
+import { Badge } from '@/components/ui/badge'
 import { client } from '@/sanity/client'
 import { SERVICE_QUERY } from '@/sanity/queries'
 import { Service } from '@/sanity/types'
+import Link from 'next/link'
 
 export default async function ServiceCard() {
   const service: Service[] = await client.fetch(SERVICE_QUERY)
@@ -12,18 +14,25 @@ export default async function ServiceCard() {
     <>
       {service.map((data) => (
         <Card key={data._id} image={data.image}>
-          <div className="flex-1">
+          <div className="flex flex-col gap-2 h-full px-4 pt-4 pb-12">
+            {' '}
             <p className="card-title">{data.title}</p>
             <p className="card-subtitle">{data.description}</p>
-            <div className="flex gap-1 flex-wrap mt-3">
+            <div className="flex gap-1 flex-wrap mt-3 ">
               {data.tags.map((t, i) => (
-                <Pill key={i}>{t}</Pill>
+                <Badge className="text-[0.7rem]" variant="outline" key={i}>
+                  {t}
+                </Badge>
               ))}
             </div>
+            <NavigationLink className="mt-4 absolute bottom-4 ">
+              {data.cta}
+            </NavigationLink>
+            <Link
+              className="absolute inset-0"
+              href={data.href ? data.href : ''}
+            />
           </div>
-          <NavigationLink href={data.href ? data.href : ''} className="mt-auto">
-            {data.cta}
-          </NavigationLink>
         </Card>
       ))}
     </>

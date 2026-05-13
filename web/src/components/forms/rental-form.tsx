@@ -85,6 +85,7 @@ export default function RentalForm() {
         />
 
         <FormInput
+          disabled={key}
           type="text"
           htmlFor="rental"
           label="Kva utstyr vil du leige?*"
