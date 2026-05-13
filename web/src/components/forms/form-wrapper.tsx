@@ -10,7 +10,7 @@ export default function FormWrapper() {
 
   return (
     <Container className="flex flex-col gap-4 max-w-3xl grow">
-      <Container className="flex gap-2">
+      <Container className="flex flex-col sm:flex-row gap-2">
         <Button
           className="grow cursor-pointer"
           onClick={() => setShowForm(false)}

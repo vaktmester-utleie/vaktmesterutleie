@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils'
 
 export default function DesktopNavigation() {
   const pathname = usePathname()
-  console.log(pathname)
   return (
     <nav className="hidden md:flex justify-between">
       <ul className="flex gap-1">

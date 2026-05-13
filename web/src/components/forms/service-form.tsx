@@ -8,6 +8,7 @@ import { NativeSelect, NativeSelectOption } from '../ui/native-select'
 import Container from '../wrapper/container'
 import FormInput from './form-input'
 import FormButton from './form-button'
+import { sendMail } from '@/features/api/send-mail'
 import { toast } from 'sonner'
 
 const schema = z.object({
@@ -24,12 +25,18 @@ export default function ServiceForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Schema>({ resolver: zodResolver(schema) })
 
-  const onSubmit: SubmitHandler<Schema> = (data) => {
-    console.log(data)
+  const onSubmit: SubmitHandler<Schema> = async (data) => {
+    await sendMail({
+      type: 'vaktmeister',
+      ...data,
+    })
     toast.success('Takk! Me tek kontakt så snart som mogleg.')
+
+    reset()
   }
   return (
     <Container>
@@ -39,12 +46,6 @@ export default function ServiceForm() {
           Beskriv oppdraget ditt, så gir me deg eit tilbod.
         </p>
       </Container>
-
-      {isSubmitSuccessful && (
-        <div className="bg-green-50 border border-green-200 text-green-700 rounded-md px-4 py-3 text-sm mb-6">
-          Takk! Me tek kontakt så snart som mogleg.
-        </div>
-      )}
 
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         <FieldGroup className="flex flex-row gap-4">

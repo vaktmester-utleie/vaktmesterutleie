@@ -16,6 +16,7 @@ import { useSearchParams } from 'next/navigation'
 import Container from '../wrapper/container'
 import FormButton from './form-button'
 import { toast } from 'sonner'
+import { sendMail } from '@/features/api/send-mail'
 
 const schema = z.object({
   name: z.string().min(1, 'Namn er påkravd'),
@@ -36,6 +37,7 @@ export default function RentalForm() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<Schema>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -43,9 +45,16 @@ export default function RentalForm() {
     },
   })
 
-  const onSubmit: SubmitHandler<Schema> = (data) => {
-    console.log({ ...data, fromDate, toDate })
+  const onSubmit: SubmitHandler<Schema> = async (data) => {
+    await sendMail({
+      type: 'utleige',
+      ...data,
+      fraDato: fromDate,
+      tilDato: toDate,
+    })
+
     toast.success('Takk! Me tek kontakt så snart som mogleg.')
+    reset()
   }
   return (
     <Container>
