@@ -13,12 +13,13 @@ export default function Hero() {
       </h2>
 
       <Container className="flex flex-col sm:flex-row gap-4 md:max-w-md">
-        <Button asChild size="lg">
+        <Button asChild>
           <Link href="/kontakt" className="flex items-center gap-2">
-            Få eit gratis tilbod
+            <span> Få eit gratis tilbod</span>
+            <ArrowRight />
           </Link>
         </Button>
-        <Button asChild variant="outline" size="lg">
+        <Button asChild variant="outline">
           <Link href="/utleige">Sjå utleigekatalog</Link>
         </Button>
       </Container>

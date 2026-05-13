@@ -53,7 +53,12 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <p className="eyebrow">Følg oss</p>
             <div className="flex gap-2">
-              <Link href="#" className="text-gray-500 hover:text-gray-900">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/profile.php?id=100075706164014"
+                className="text-gray-500 hover:text-gray-900"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 256 256"
@@ -89,8 +94,13 @@ export default function Footer() {
                     strokeWidth="16"
                   />
                 </svg>
-              </Link>
-              <Link href="#" className="text-gray-500 hover:text-gray-900">
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/vaktmesterutleie/"
+                className="text-gray-500 hover:text-gray-900"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 256 256"
@@ -119,7 +129,7 @@ export default function Footer() {
                   />
                   <circle cx="180" cy="76" r="12" />
                 </svg>
-              </Link>
+              </a>
             </div>
             <p className="text-xs text-gray-400">Org.nr: 922 629 102</p>
           </div>

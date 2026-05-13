@@ -16,7 +16,7 @@ me svarer raskt
 "
           subtitle="Fyll ut skjemaet nedanfor eller ring oss direkte. Uforpliktande tilbod innan 24 timar."
         />
-        <Container className="flex gap-4 justify-between">
+        <Container className="flex gap-4 justify-between flex-col md:flex-row">
           <FormWrapper />
           <ContactInfo />
         </Container>

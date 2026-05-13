@@ -49,7 +49,7 @@ export default function RentalForm() {
   }
   return (
     <Container>
-      <Container>
+      <Container className="mb-6">
         <p className="card-title">Lei utstyr</p>
         <p className="card-subtitle">
           Fortel oss kva du vil leige, og me kjem tilbake med pris og

@@ -18,15 +18,15 @@ export default function CTA({ subtitle, title, description }: Props) {
 
         <Container className="flex gap-4  items-center justify-center">
           <Button asChild>
-            <Link href={''}>
+            <Link href={'/kontakt'}>
+              <span> Send førespurnad</span>
               <Send />
-              Send førespurnad
             </Link>
           </Button>
           <Button variant="outline" asChild>
             <Link href="tel:+4747177466">
+              <span> Ring oss direkte</span>
               <Phone />
-              Ring oss direkte
             </Link>
           </Button>
         </Container>
