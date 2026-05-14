@@ -15,17 +15,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="eyebrow mb-3">Tenester</p>
-
             <ul className="flex flex-col gap-1">
-              {navigationItems.map((item) => (
-                <li
+              <li>
+                <Link
                   className="text-sm text-gray-600 hover:text-gray-900"
-                  key={item.id}
+                  href="/personvern"
                 >
-                  <Link href={item.href}> {item.label}</Link>
-                </li>
-              ))}
+                  Personvern
+                </Link>
+              </li>
             </ul>
           </div>
 
