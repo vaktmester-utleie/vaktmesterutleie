@@ -18,7 +18,7 @@ export default function MobileNavigation({ open, onClose }: Props) {
       )}
     >
       <div className="flex justify-end py-6 px-6 border-b">
-        <button onClick={onClose}>
+        <button aria-label="Close menu" onClick={onClose}>
           <X className="w-5 h-5" />
         </button>
       </div>

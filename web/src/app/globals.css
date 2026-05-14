@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-brand-500: oklch(0.643 0.213 36.43);
+  --color-brand-500: oklch(62.045% 0.25461 29.223);
 }
 @theme inline {
   --color-background: var(--background);

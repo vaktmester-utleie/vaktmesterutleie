@@ -31,6 +31,7 @@ export default async function ServiceCard() {
             <Link
               className="absolute inset-0"
               href={data.href ? data.href : ''}
+              aria-label={`Gå til ${data.title}`}
             />
           </div>
         </Card>

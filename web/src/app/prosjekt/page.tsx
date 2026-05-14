@@ -1,8 +1,10 @@
 import CardContainer from '@/components/card/card-container'
 import PageHeader from '@/components/page-header'
+import CardSkeleton from '@/components/skeleton'
 import Section from '@/components/wrapper/section'
 import ProjectCard from '@/features/projects/components/project-card'
 import { Metadata } from 'next'
+import { Suspense } from 'react'
 export const metadata: Metadata = {
   title: 'Prosjekt',
   description:
@@ -20,7 +22,9 @@ export default function Page() {
       </Section>
       <Section constraint>
         <CardContainer className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-          <ProjectCard />
+          <Suspense fallback={<CardSkeleton count={6} />}>
+            <ProjectCard />
+          </Suspense>
         </CardContainer>
       </Section>
     </Section>

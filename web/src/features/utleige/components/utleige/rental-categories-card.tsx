@@ -15,6 +15,7 @@ export default async function RentalCategoryCard() {
           <div className=" flex flex-col flex-1 px-4 py-8">
             <NavigationLink>{data.title}</NavigationLink>
             <Link
+              aria-label={`Gå til /utleige/${data.slug.current}`}
               className="absolute inset-0"
               href={`/utleige/${data.slug.current}`}
             />

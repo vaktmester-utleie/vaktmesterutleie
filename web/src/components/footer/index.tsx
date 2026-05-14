@@ -54,6 +54,7 @@ export default function Footer() {
             <p className="eyebrow">Følg oss</p>
             <div className="flex gap-2">
               <a
+                aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/profile.php?id=100075706164014"
@@ -96,6 +97,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
+                aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.instagram.com/vaktmesterutleie/"
