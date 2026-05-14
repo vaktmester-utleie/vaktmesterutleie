@@ -26,7 +26,7 @@ export default function ServiceForm() {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors },
   } = useForm<Schema>({ resolver: zodResolver(schema) })
 
   const onSubmit: SubmitHandler<Schema> = async (data) => {
