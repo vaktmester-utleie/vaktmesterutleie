@@ -12,7 +12,7 @@ import { Field, FieldGroup, FieldLabel } from '../ui/field'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import { Textarea } from '../ui/textarea'
 import FormInput from './form-input'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Container from '../wrapper/container'
 import FormButton from './form-button'
 import { toast } from 'sonner'
@@ -29,6 +29,7 @@ const schema = z.object({
 type Schema = z.infer<typeof schema>
 
 export default function RentalForm() {
+  const router = useRouter()
   const [fromDate, setFromDate] = useState<Date>()
   const [toDate, setToDate] = useState<Date>()
   const params = useSearchParams()

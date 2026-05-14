@@ -11,7 +11,7 @@ export default async function RentalCategoryCard() {
   return (
     <>
       {categories.map((data) => (
-        <Card key={data._id} image={data.image} imgSize>
+        <Card key={data._id} image={data.image}>
           <div className=" flex flex-col flex-1 px-4 py-8">
             <NavigationLink>{data.title}</NavigationLink>
             <Link

@@ -32,8 +32,8 @@ Oppdrag: ${body.message ?? '-'}
 
   try {
     const { error } = await resend.emails.send({
-      from: 'Sørås Vaktmesterutleie <onboarding@resend.dev>',
-      to: 'jonathan@mjos.no',
+      from: 'Vaktmesterutleie <onboarding@resend.dev>',
+      to: 'post@vaktmesterutleie.no',
       subject,
       text,
     })

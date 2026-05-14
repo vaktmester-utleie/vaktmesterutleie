@@ -1,3 +1,4 @@
+import PageBreadcrumb from '@/components/breadcrumb'
 import CardContainer from '@/components/card/card-container'
 import PageHeader from '@/components/page-header'
 import Section from '@/components/wrapper/section'
@@ -24,9 +25,10 @@ export default async function Page({ params }: Params) {
   "
           subtitle="Tilhengarar, stillas, stiegar og verktøy til gode prisar. Hent sjølv  eller avtal levering."
         />
+        <PageBreadcrumb />
       </Section>
       <Section constraint>
-        <CardContainer className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <CardContainer className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-stretch">
           <RentalCard slug={slug} />
         </CardContainer>
       </Section>

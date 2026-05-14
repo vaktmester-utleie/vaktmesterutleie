@@ -22,12 +22,20 @@ export const rentalSchema = defineType({
     defineField({
       name: 'pricePerDay',
       type: 'number',
-      title: 'Pris per dag (kr)',
+      title: 'Pris per dag',
     }),
     defineField({
       name: 'pricePerWeek',
       type: 'number',
-      title: 'Pris per veke (kr)',
+      title: 'Pris per veke',
+      validation: (Rule) =>
+        Rule.custom((pricePerWeek, context) => {
+          const { pricePerDay } = context.document as { pricePerDay?: number }
+          if (!pricePerDay && !pricePerWeek) {
+            return 'Må ha enten pris per dag eller per veke'
+          }
+          return true
+        }),
     }),
     defineField({
       name: 'specs',
