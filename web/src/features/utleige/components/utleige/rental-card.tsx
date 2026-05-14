@@ -8,9 +8,12 @@ import Link from 'next/link'
 
 export default async function RentalCard({ slug }: { slug: string }) {
   const item: Rental[] = await client.fetch(RENTAL_BY_CATEGORY_QUERY, { slug })
+  const sorted = [...item].sort((a, b) =>
+    a.available === b.available ? 0 : a.available ? -1 : 1
+  )
   return (
     <>
-      {item.map((data) => (
+      {sorted.map((data) => (
         <Card
           key={data._id}
           image={data.image}
@@ -38,11 +41,15 @@ export default async function RentalCard({ slug }: { slug: string }) {
                   </p>
                 )}
               </div>
-              <NavigationLink>Bestill</NavigationLink>
-              <Link
-                href={`/kontakt?utstyr=${data.title}`}
-                className="absolute inset-0"
-              />
+              {data.available && (
+                <>
+                  <NavigationLink>Bestill</NavigationLink>
+                  <Link
+                    href={`/kontakt?utstyr=${data.title}`}
+                    className="absolute inset-0"
+                  />
+                </>
+              )}
             </div>
           </div>
         </Card>

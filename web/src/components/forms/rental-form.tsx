@@ -55,7 +55,10 @@ export default function RentalForm() {
     })
 
     toast.success('Takk! Me tek kontakt så snart som mogleg.')
-    reset()
+    reset({ rental: '' })
+    setFromDate(undefined)
+    setToDate(undefined)
+    router.replace('/kontakt')
   }
   return (
     <Container>
