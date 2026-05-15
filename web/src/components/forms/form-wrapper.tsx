@@ -14,7 +14,7 @@ export default function FormWrapper() {
         <Button
           className="grow cursor-pointer"
           onClick={() => setShowForm(false)}
-          variant={!showForm ? 'outline' : 'ghost'}
+          variant={!showForm ? 'outline' : 'secondary'}
         >
           <Truck />
           <span> Utleigeførespurnad</span>
@@ -22,7 +22,7 @@ export default function FormWrapper() {
         <Button
           className="grow cursor-pointer"
           onClick={() => setShowForm(true)}
-          variant={showForm ? 'outline' : 'ghost'}
+          variant={showForm ? 'outline' : 'secondary'}
         >
           <Wrench />
           <span> Vaktmeister / Drone</span>

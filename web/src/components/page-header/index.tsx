@@ -1,13 +1,13 @@
 import Container from '../wrapper/container'
 type Props = {
-  label: string
+  label?: string
   title: string
   subtitle?: string
 }
 export default function PageHeader({ label, title, subtitle }: Props) {
   return (
     <Container className="flex flex-col gap-2 mb-6">
-      <span className="link-brand uppercase">{label}</span>
+      {label && <span className="link-brand uppercase">{label}</span>}
       <p className="text-2xl title">{title}</p>
       {subtitle && <p className="subtitle">{subtitle}</p>}
     </Container>

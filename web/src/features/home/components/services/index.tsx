@@ -7,10 +7,8 @@ export default function Services() {
   return (
     <Container>
       <PageHeader
-        label="våre tjenester"
-        title="Alt du treng —
-éin leverandør
-"
+        label="kva me tilbyr"
+        title="Tenestene våre"
         subtitle="Eit breitt spekter av tenester for privatpersonar og bedrifter i Bergensregionen."
       />
       <CardContainer className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">

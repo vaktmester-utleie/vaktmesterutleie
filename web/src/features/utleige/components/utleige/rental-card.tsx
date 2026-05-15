@@ -43,7 +43,7 @@ export default async function RentalCard({ slug }: { slug: string }) {
               </div>
               {data.available && (
                 <>
-                  <NavigationLink>Bestill</NavigationLink>
+                  <NavigationLink>Leig</NavigationLink>
                   <Link
                     href={`/kontakt?utstyr=${data.title}`}
                     className="absolute inset-0"

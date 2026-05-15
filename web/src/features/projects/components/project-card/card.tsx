@@ -48,8 +48,8 @@ export default function ProjectCarouselCard({ item }: { item: Project }) {
             aria-label="carousel-dot"
             key={i}
             onClick={() => emblaApi?.scrollTo(i)}
-            className={`h-1.5 rounded-full transition-all ${
-              current === i ? 'w-4 bg-orange-500' : 'w-1.5 bg-gray-300'
+            className={`h-2 w-2   rounded-full transition-all cursor-pointer ${
+              current === i ? 'w-4 bg-brand-500' : 'w-2 bg-gray-300'
             }`}
           />
         ))}

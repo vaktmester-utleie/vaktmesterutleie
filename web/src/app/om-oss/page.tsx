@@ -14,9 +14,10 @@ export default function Page() {
         <Image
           className="rounded-lg shadow-sm"
           src={'/sivert.jpg'}
-          width={500}
-          height={500}
+          width={1000}
+          height={1000}
           alt="bilde av sivert sørås"
+          loading="eager"
         />
         <Container>
           <h1 className="title uppercase">Om oss</h1>

@@ -6,10 +6,9 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <Container className="flex flex-col gap-6 max-w-xl">
-      <h1 className="hero-title">Handverk du kan stole på.</h1>
+      <h1 className="hero-title">Me fiksar det.</h1>
       <h2 className="hero-subtitle">
-        Vaktmeistertenester, utstyrsutleige og droneinspeksjon for heile
-        Bergensområdet — påliteleg sidan 2019.
+        Vaktmeistertenester, utstyrsutleige og droneinspeksjon.
       </h2>
 
       <Container className="flex flex-col sm:flex-row gap-4 md:max-w-md">

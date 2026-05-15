@@ -13,22 +13,54 @@ export default function Footer() {
               <Logo variant="small" />
             </div>
           </div>
-
           <div>
-            <ul className="flex flex-col gap-1">
+            <p className="font-medium">Tenester</p>
+            <ul className="flex flex-col gap-1 mt-3">
               <li>
                 <Link
                   className="text-sm text-gray-600 hover:text-gray-900"
-                  href="/personvern"
+                  href="/"
                 >
-                  Personvern
+                  Heim
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                  href="/utleige"
+                >
+                  Utleige
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                  href="/prosjekt"
+                >
+                  Prosjekt
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                  href="/om-oss"
+                >
+                  Om oss
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                  href="/kontakt"
+                >
+                  Kontakt
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className="flex flex-col gap-3">
-            <p className="eyebrow">Kontakt</p>
+            <p className="font-medium">Kontakt</p>
             <div className="flex flex-col gap-2">
               <div className="flex items-start gap-2 text-sm text-gray-600">
                 <MapPin className="w-4 h-4 mt-0.5  shrink-0" />
@@ -49,7 +81,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-3">
-            <p className="eyebrow">Følg oss</p>
+            <p className="font-medium">Følg oss</p>
             <div className="flex gap-2">
               <a
                 aria-label="Facebook"
@@ -141,7 +173,14 @@ export default function Footer() {
           <p className="text-xs text-gray-400">
             © 2026 Sørås Vaktmesterutleie. Alle rettar reserverte.
           </p>
+
           <div className="flex gap-4 flex-wrap justify-center">
+            <Link
+              className="text-xs text-gray-400 hover:text-gray-600"
+              href="/personvern"
+            >
+              Personvern
+            </Link>
             <Link
               href="/om-oss"
               className="text-xs text-gray-400 hover:text-gray-600"

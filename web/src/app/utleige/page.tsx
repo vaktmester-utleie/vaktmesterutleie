@@ -16,7 +16,7 @@ export default function Page() {
           label="utleigekatalog"
           title="Lei utstyr enkelt og rimeleg
    "
-          subtitle="Tilhengarar, stillas, stiegar og verktøy til gode prisar. Hent sjølv  eller avtal levering."
+          subtitle="Tilhengarar, stillas, stigar og verktøy til gode prisar. Hent sjølv  eller avtal levering."
         />
       </Section>
       <Section constraint>

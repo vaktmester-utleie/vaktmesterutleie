@@ -15,10 +15,9 @@ export default function Page() {
         {' '}
         <PageHeader
           label="kontakt oss"
-          title="Ta kontakt —
-me svarer raskt
+          title="Me svarer raskt
 "
-          subtitle="Fyll ut skjemaet nedanfor eller ring oss direkte. Uforpliktande tilbod innan 24 timar."
+          subtitle="Fyll ut skjemaet nedanfor eller ring oss direkte."
         />
         <Container className="flex py-4 gap-8 justify-between flex-col o">
           <FormWrapper />

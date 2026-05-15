@@ -1,13 +1,13 @@
 import { Button } from '@/components/ui/button'
 import Container from '@/components/wrapper/container'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { Phone } from 'lucide-react'
 import Link from 'next/link'
 
 const PHONE = '+47 471 77 466'
 
 export default function ContactInfo() {
   return (
-    <Container className="border rounded-md p-6 bg-orange-50 flex flex-col items-center gap-3 text-center">
+    <Container className="border rounded-md p-6 bg-brand-500/10 flex flex-col items-center gap-3 text-center">
       <p className="font-semibold">Hastar det?</p>
       <p className="text-sm text-gray-500">Ring oss direkte for rask hjelp</p>
       <Button asChild>
