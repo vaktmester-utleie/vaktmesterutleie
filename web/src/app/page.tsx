@@ -19,8 +19,9 @@ export default function Page() {
       </Section>
       <CTA
         subtitle="klar til å starte?"
-        title="Ta kontakt - me ordnar resten"
-        description="Enten du treng ein handverkar eller vil leige utstyr — me hjelper deg."
+        title="Fortel oss kva du treng —
+me ordnar resten"
+        description="Enten du treng ein handverkar, leige utstyr eller ein droneinspeksjon"
       />
     </Section>
   )

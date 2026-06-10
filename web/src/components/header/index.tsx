@@ -16,13 +16,13 @@ export default function Header() {
       <Container className="max-w-6xl w-full mx-auto flex justify-between items-center">
         <Logo />
 
-        <Container>
+        <div>
           <DesktopNavigation />
-          <Container className="md:hidden block">
+          <div className="md:hidden block">
             <Hamburger onOpen={onOpen} />
             <MobileNavigation open={open} onClose={onClose} />
-          </Container>
-        </Container>
+          </div>
+        </div>
       </Container>
     </header>
   )

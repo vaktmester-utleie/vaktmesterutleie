@@ -165,7 +165,7 @@
   }
 
   .link-brand {
-    @apply text-brand-500 text-xs font-semibold;
+    @apply text-xs font-semibold tracking-wide text-muted-foreground;
   }
 
   .page-section {

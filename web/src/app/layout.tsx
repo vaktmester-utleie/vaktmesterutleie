@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist } from 'next/font/google'
+import { Geist, Inter } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
 import Header from '@/components/header'
@@ -8,6 +8,11 @@ import { Toaster } from 'sonner'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
+
+const fontInter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
 })
 
@@ -29,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn('h-full', 'antialiased', geistSans.className, 'font-sans')}
+      className={cn('h-full', 'antialiased', fontInter.className, 'font-sans')}
     >
       <body className="min-h-full flex flex-col">
         <Header />
