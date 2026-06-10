@@ -27,7 +27,9 @@ export default function ServiceForm() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<Schema>({ resolver: zodResolver(schema) })
+  } = useForm<Schema>({
+    resolver: zodResolver(schema),
+  })
 
   const onSubmit: SubmitHandler<Schema> = async (data) => {
     await sendMail({

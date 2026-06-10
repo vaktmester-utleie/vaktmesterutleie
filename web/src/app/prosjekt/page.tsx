@@ -1,4 +1,3 @@
-import CardContainer from '@/components/card/card-container'
 import PageHeader from '@/components/page-header'
 import CardSkeleton from '@/components/skeleton'
 import Section from '@/components/wrapper/section'
@@ -21,11 +20,9 @@ export default function Page() {
         />
       </Section>
       <Section constraint>
-        <CardContainer className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-          <Suspense fallback={<CardSkeleton count={6} />}>
-            <ProjectCard />
-          </Suspense>
-        </CardContainer>
+        <Suspense fallback={<CardSkeleton count={6} />}>
+          <ProjectCard />
+        </Suspense>
       </Section>
     </Section>
   )

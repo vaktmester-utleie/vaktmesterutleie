@@ -8,7 +8,33 @@ export const metadata: Metadata = {
   title: 'Kontakt',
   description: 'Ta kontakt for uforpliktande tilbod.',
 }
-export default function Page() {
+
+type SearchParams = {
+  searchParams: {
+    tag: string
+  }
+}
+export default async function Page({ searchParams }: SearchParams) {
+  const { tag } = await searchParams
+
+  if (!tag)
+    return (
+      <Section className="min-h-screen page-section pb-40 md:max-w-2xl  grow mx-auto">
+        <Section constraint>
+          {' '}
+          <PageHeader
+            label="kontakt oss"
+            title="Me svarer raskt
+"
+            subtitle="Fyll ut skjemaet nedanfor eller ring oss direkte."
+          />
+          <Container className="flex py-4 gap-8 justify-between flex-col o">
+            <FormWrapper />
+            <ContactInfo />
+          </Container>
+        </Section>
+      </Section>
+    )
   return (
     <Section className="min-h-screen page-section pb-40 md:max-w-2xl  grow mx-auto">
       <Section constraint>
@@ -20,7 +46,7 @@ export default function Page() {
           subtitle="Fyll ut skjemaet nedanfor eller ring oss direkte."
         />
         <Container className="flex py-4 gap-8 justify-between flex-col o">
-          <FormWrapper />
+          <FormWrapper tag={tag} />
           <ContactInfo />
         </Container>
       </Section>

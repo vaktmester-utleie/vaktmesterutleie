@@ -39,6 +39,12 @@ export type Rental = {
 export type Project = {
   _id: string
   title: string
-  image: ImageWithAlt[]
-  description: string
+  slug: { current: string }
+  category?: string
+  location?: string
+  date?: string
+  description?: string
+  beforeImage?: ImageWithAlt
+  afterImage?: ImageWithAlt
+  image?: ImageWithAlt[]
 }

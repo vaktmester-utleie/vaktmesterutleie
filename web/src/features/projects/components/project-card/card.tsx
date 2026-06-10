@@ -1,64 +1,44 @@
-'use client'
-
 import { urlFor } from '@/sanity/image'
 import { Project } from '@/sanity/types'
+import { ArrowRight } from 'lucide-react'
 import { Image } from 'next-sanity/image'
-import { useState, useCallback, useEffect } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
+import Link from 'next/link'
 
-export default function ProjectCarouselCard({ item }: { item: Project }) {
-  const [current, setCurrent] = useState(0)
-  const [emblaRef, emblaApi] = useEmblaCarousel()
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return
-    setCurrent(emblaApi.selectedScrollSnap())
-  }, [emblaApi])
-
-  useEffect(() => {
-    if (!emblaApi) return
-    emblaApi.on('select', onSelect)
-    return () => {
-      emblaApi.off('select', onSelect)
-    }
-  }, [emblaApi, onSelect])
+export default function ProjectCard({ item }: { item: Project }) {
+  const cover =
+    item.afterImage?.image ?? item.image?.[item.image.length - 1]?.image
 
   return (
-    <div className="rounded-md border border-neutral-200 overflow-hidden hover:shadow-sm transition">
-      <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex">
-          {item.image.map((img, i) =>
-            img.image ? (
-              <div key={i} className="relative flex-none w-full h-[250px]">
-                <Image
-                  className="object-cover"
-                  fill
-                  src={urlFor(img.image).width(1000).url()}
-                  alt={img.alt ?? ''}
-                />
-              </div>
-            ) : null
-          )}
-        </div>
-      </div>
+    <li className="group relative aspect-[4/3] md:aspect-square overflow-hidden rounded-md">
+      {cover && (
+        <Image
+          src={urlFor(cover).width(800).url()}
+          fill
+          className="object-cover brightness-75 transition group-hover:scale-105 group-focus-within:scale-105"
+          alt={item.afterImage?.alt ?? item.title ?? 'Alternativ tekst'}
+        />
+      )}
 
-      <div className="flex justify-center gap-1.5 py-2">
-        {item.image.map((_, i) => (
-          <button
-            aria-label="carousel-dot"
-            key={i}
-            onClick={() => emblaApi?.scrollTo(i)}
-            className={`h-2 w-2   rounded-full transition-all cursor-pointer ${
-              current === i ? 'w-4 bg-brand-500' : 'w-2 bg-gray-300'
-            }`}
+      <div className="absolute inset-0 flex flex-col gap-1 justify-end p-6 text-white bg-gradient-to-t from-black/90 to-transparent">
+        <div className="flex items-center justify-between">
+          <p className="text-lg [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">
+            {item.title}
+          </p>
+          <ArrowRight
+            size={16}
+            className="transition group-hover:translate-x-1 group-focus-within:translate-x-1"
           />
-        ))}
+        </div>
+        {item.description && (
+          <p className="text-xs text-white/80">{item.description}</p>
+        )}
       </div>
 
-      <div className="flex flex-col gap-2 px-4 py-4">
-        <p className="card-title">{item.title}</p>
-        <p className="card-subtitle">{item.description}</p>
-      </div>
-    </div>
+      <Link
+        className="absolute inset-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-inset"
+        href={`/prosjekt/${item.slug.current}`}
+        aria-label={`Sjå prosjekt: ${item.title}`}
+      />
+    </li>
   )
 }

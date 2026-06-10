@@ -5,8 +5,8 @@ import RentalForm from './rental-form'
 import Container from '../wrapper/container'
 import { Button } from '../ui/button'
 import { Truck, Wrench } from 'lucide-react'
-export default function FormWrapper() {
-  const [showForm, setShowForm] = useState(false)
+export default function FormWrapper({ tag }: { tag?: string }) {
+  const [showForm, setShowForm] = useState(!!tag)
 
   return (
     <Container className="flex flex-col gap-8">
