@@ -1,6 +1,5 @@
 import Card from '@/components/card'
 import NavigationLink from '@/components/navigation-link'
-import Pill from '@/components/pill'
 import { Badge } from '@/components/ui/badge'
 import { client } from '@/sanity/client'
 import { SERVICE_QUERY } from '@/sanity/queries'

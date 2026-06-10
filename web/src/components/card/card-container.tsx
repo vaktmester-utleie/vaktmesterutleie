@@ -16,5 +16,5 @@ export default function CardContainer({
   cols = '3',
   className,
 }: Props) {
-  return <div className={cn('grid gap-6', className)}>{children}</div>
+  return <ul className={cn('grid gap-6', className)}>{children}</ul>
 }

@@ -30,11 +30,9 @@ export default async function Page({ params }: Params) {
         <PageBreadcrumb />
       </Section>
       <Section constraint>
-        <CardContainer className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-stretch">
-          <Suspense fallback={<CardSkeleton count={6} />}>
-            <RentalCard slug={slug} />
-          </Suspense>
-        </CardContainer>
+        <Suspense fallback={<CardSkeleton count={6} />}>
+          <RentalCard slug={slug} />
+        </Suspense>
       </Section>
     </Section>
   )

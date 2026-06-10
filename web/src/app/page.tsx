@@ -1,4 +1,5 @@
 import CTA from '@/components/cta'
+import Container from '@/components/wrapper/container'
 import Section from '@/components/wrapper/section'
 import Hero from '@/features/home/components/hero'
 import Services from '@/features/home/components/services'
@@ -10,10 +11,13 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
-    <Section className="page-section">
-      <Section constraint>
-        <Hero />
-      </Section>
+    <Section className="flex flex-col gap-20">
+      <Container className="flex items-center bg-gray-100 py-40 border-y">
+        <Section constraint>
+          <Hero />
+        </Section>
+      </Container>
+
       <Section constraint>
         <Services />
       </Section>
