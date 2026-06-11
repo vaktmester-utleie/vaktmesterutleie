@@ -9,7 +9,7 @@ export default function FormWrapper({ tag }: { tag?: string }) {
   const [showForm, setShowForm] = useState(!!tag)
 
   return (
-    <Container className="flex flex-col gap-8">
+    <Container className="flex flex-col gap-8 grow">
       <Container className="flex flex-col sm:flex-row gap-2">
         <Button
           className="grow cursor-pointer"

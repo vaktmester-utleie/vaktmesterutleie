@@ -1,3 +1,4 @@
+import PageHeader from '@/components/page-header'
 import Container from '@/components/wrapper/container'
 import Section from '@/components/wrapper/section'
 import { Metadata } from 'next'
@@ -9,7 +10,12 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
-    <Section className="min-h-screen flex items-center justify-center">
+    <Section className="flex flex-col gap-14 min-h-screen pb-40">
+      <Container className="bg-white border-b py-20">
+        <Section constraint>
+          <PageHeader title="Vaktmesterutleie" label="Om oss" />
+        </Section>
+      </Container>
       <Section className="grid grid-cols-1 sm:grid-cols-2 gap-4" constraint>
         <Image
           className="rounded-lg shadow-sm"
@@ -20,13 +26,12 @@ export default function Page() {
           loading="eager"
         />
         <Container>
-          <h1 className="title uppercase">Om oss</h1>
-          <p className="subtitle">
+          <h1 className="subtitle">
             Sørås Vaktmesterutleie vart etablert i 2019. Med fagbrev som tømrer
             og driftstid som vaktmester har ein opparbeida seg ein brei
             kompetanse i håndtverkarbransjen. Ved behov har me faste innleide
             sammarbeidspartnara.
-          </p>
+          </h1>
         </Container>
       </Section>
     </Section>

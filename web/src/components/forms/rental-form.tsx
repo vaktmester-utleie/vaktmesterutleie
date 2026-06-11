@@ -61,7 +61,7 @@ export default function RentalForm() {
     router.replace('/kontakt')
   }
   return (
-    <Container>
+    <Container className="bg-white p-4 rounded-md border">
       <Container className="mb-6">
         <p className="card-title">Lei utstyr</p>
         <p className="card-subtitle">
@@ -156,6 +156,7 @@ export default function RentalForm() {
         <Field>
           <FieldLabel htmlFor="message">Melding</FieldLabel>
           <Textarea
+            className="h-40"
             placeholder="Noko meir me bør vite?"
             {...register('message')}
           />

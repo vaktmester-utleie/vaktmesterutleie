@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { MapPin, Phone, Mail } from 'lucide-react'
-import { navigationItems } from '../navigation/navigation-items'
 import Logo from '../header/logo'
 
 export default function Footer() {

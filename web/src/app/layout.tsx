@@ -38,7 +38,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Header />
-        <main className="grow bg-gray-100/20">{children}</main>
+        <main className="grow bg-gray-100/40">{children}</main>
         <Footer />
         <Toaster />
       </body>

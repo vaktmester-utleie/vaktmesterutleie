@@ -41,7 +41,7 @@ export default function ServiceForm() {
     reset()
   }
   return (
-    <Container>
+    <Container className="bg-white p-4 rounded-md border">
       <Container className="mb-6">
         <p className="card-title">Bestill teneste</p>
         <p className="card-subtitle">
@@ -99,6 +99,7 @@ export default function ServiceForm() {
         <Field>
           <FieldLabel>Beskriv oppdraget *</FieldLabel>
           <Textarea
+            className="h-40"
             placeholder="Fortel oss kva du treng hjelp med..."
             rows={5}
             {...register('message')}
