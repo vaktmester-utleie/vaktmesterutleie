@@ -66,7 +66,7 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 mt-0.5  shrink-0" />
                 <span>
                   Vevleheiane 3<br />
-                  5281 Valestrandfossen
+                  5281 Valestrandsfossen
                 </span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
