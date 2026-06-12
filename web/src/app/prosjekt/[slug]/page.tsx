@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/comparison'
 import { urlFor } from '@/sanity/image'
 import { Image } from 'next-sanity/image'
-import { ArrowRight, MapPin, Tag, Calendar } from 'lucide-react'
+import { ArrowRight, MapPin, Tag, Calendar, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -74,11 +74,10 @@ export default async function ProjectPage({
           href="/prosjekt"
           className="mb-6 inline-flex items-center gap-1 text-sm text-neutral-500 hover:text-neutral-900"
         >
-          ← Alle prosjekt
+          <ArrowLeft size={16} /> <span>Tilbake</span>
         </Link>
       </div>
 
-      {/* FULL BREDDE slider */}
       {hasSlider && (
         <Comparison
           className="aspect-[21/9] h-[30dvh] md:h-auto w-full"
@@ -110,7 +109,7 @@ export default async function ProjectPage({
         </Comparison>
       )}
 
-      <div className="mx-auto max-w-4xl px-4">
+      <div className="mx-auto max-w-4xl px-4 py-10">
         {/* metadata som chips */}
         <div className="mt-8 flex flex-wrap items-center gap-2">
           {project.category && (
@@ -136,21 +135,21 @@ export default async function ProjectPage({
           )}
         </div>
 
-        <h1 className="mt-5 text-5xl font-bold tracking-tight text-neutral-900">
+        <h1 className="mt-5  font-bold tracking-tight text-neutral-900 title">
           {project.title}
         </h1>
 
         {project.description && (
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-600">
+          <p className="mt-5 max-w-2xl leading-relaxed text-neutral-600">
             {project.description}
           </p>
         )}
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 rounded-md bg-neutral-100 p-6 sm:flex-row sm:items-center">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 rounded-md border  p-6 sm:flex-row sm:items-center bg-white">
           <div>
             <p className="text-lg font-semibold">Ønskjer du liknande arbeid?</p>
             <p className="text-sm text-neutral-600">
-              Me gjev deg eit uforpliktande tilbod innan 24 timar.
+              Ta kontakt og få eit uforpliktande tilbud.
             </p>
           </div>
           <Button asChild>

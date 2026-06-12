@@ -47,8 +47,6 @@ export const projectSchema = defineType({
           { title: 'Osterøy', value: 'Osterøy' },
           { title: 'Arna', value: 'Arna' },
           { title: 'Åsane', value: 'Åsane' },
-          { title: 'Valestrand', value: 'Valestrand' },
-          { title: 'Bergensregionen', value: 'Bergensregionen' },
         ],
         layout: 'dropdown',
       },
