@@ -53,14 +53,14 @@ export default function ServiceForm() {
         <FieldGroup className="flex flex-row gap-4">
           <FormInput
             placeholder="Ditt fulle namn"
-            label="Namn *"
+            label="Namn*"
             htmlFor="name"
             {...register('name')}
             error={errors.name?.message}
           />
           <FormInput
             placeholder="+47 ..."
-            label="Telefon *"
+            label="Telefon*"
             type="tel"
             htmlFor="telephone"
             {...register('telephone')}
@@ -78,7 +78,7 @@ export default function ServiceForm() {
         />
 
         <Field>
-          <FieldLabel>Type teneste *</FieldLabel>
+          <FieldLabel>Type teneste*</FieldLabel>
           <NativeSelect {...register('service')}>
             <NativeSelectOption value="">Vel teneste...</NativeSelectOption>
             <NativeSelectOption value="vaktmeister">
@@ -97,7 +97,7 @@ export default function ServiceForm() {
         </Field>
 
         <Field>
-          <FieldLabel>Beskriv oppdraget *</FieldLabel>
+          <FieldLabel>Beskriv oppdraget*</FieldLabel>
           <Textarea
             className="h-40"
             placeholder="Fortel oss kva du treng hjelp med..."
