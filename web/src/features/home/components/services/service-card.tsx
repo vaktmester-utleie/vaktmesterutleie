@@ -17,13 +17,6 @@ export default async function ServiceCard() {
             {' '}
             <p className="card-title">{data.title}</p>
             <p className="card-subtitle">{data.description}</p>
-            <div className="flex gap-1 flex-wrap mt-3 ">
-              {data.tags.map((t, i) => (
-                <Badge className="text-[0.7rem]" variant="outline" key={i}>
-                  {t}
-                </Badge>
-              ))}
-            </div>
             <NavigationLink className="mt-4 absolute bottom-4 ">
               {data.cta}
             </NavigationLink>
