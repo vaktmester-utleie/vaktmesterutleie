@@ -170,7 +170,7 @@ export default function Footer() {
       <div className="border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-2">
           <p className="text-xs text-gray-400">
-            © 2026 Sørås Vaktmesterutleie. Alle rettar reserverte.
+            © 2026 Vaktmesterutleie. Alle rettar reserverte.
           </p>
 
           <div className="flex gap-4 flex-wrap justify-center">
