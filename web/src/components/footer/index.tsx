@@ -192,17 +192,6 @@ export default function Footer() {
             >
               Kontakt
             </Link>
-            <p className="text-xs text-gray-400">
-              Utvikla av{' '}
-              <Link
-                href="https://jonathanmjos.dev"
-                target="_blank"
-                rel="noopener"
-                className="hover:text-gray-600"
-              >
-                Jonathan Braaten Mjøs
-              </Link>
-            </p>
           </div>
         </div>
       </div>
