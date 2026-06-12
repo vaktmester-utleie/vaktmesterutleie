@@ -13,16 +13,19 @@ export default async function ServicesCard() {
       {service.map((item) => (
         <li
           key={item._id}
-          className="group relative aspect-[4/3] md:aspect-square overflow-hidden rounded-md"
+          className="group relative aspect-[4/3] md:aspect-square overflow-hidden rounded-md bg-neutral-900"
         >
-          <Image
-            src={urlFor(item.image.image).width(800).url()}
-            fill
-            className="object-cover brightness-75 transition group-hover:scale-105 group-focus-within:scale-105"
-            alt={
-              item.image.alt ? (item.image.alt as string) : 'Alternativ tekst'
-            }
-          />
+          {item.image.image && (
+            <Image
+              src={urlFor(item.image.image).width(800).url()}
+              fill
+              className="object-cover brightness-75 transition group-hover:scale-105 group-focus-within:scale-105"
+              alt={
+                item.image.alt ? (item.image.alt as string) : 'Alternativ tekst'
+              }
+            />
+          )}
+
           <div className="absolute inset-0 flex flex-col gap-1 justify-end p-6 text-white bg-gradient-to-t from-black/90 to-transparent">
             <div className="flex items-center justify-between">
               <p className="text-lg">{item.title}</p>

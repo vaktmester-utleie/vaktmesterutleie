@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button'
 import Container from '@/components/wrapper/container'
-import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Hero() {
@@ -15,7 +14,6 @@ export default function Hero() {
         <Button asChild>
           <Link href="/kontakt" className="flex items-center flex gap-4 px-4">
             <span> Få eit gratis tilbod</span>
-            <ArrowRight />
           </Link>
         </Button>
         <Button asChild variant="outline">

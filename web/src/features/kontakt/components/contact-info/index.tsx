@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 
-const PHONE = '+47 471 77 466'
+const PHONE = '47 17 74 66'
 const PHONE_HREF = `tel:${PHONE.replace(/\s/g, '')}`
 const EMAIL = 'post@vaktmesterutleie.no'
 
@@ -43,13 +43,16 @@ export default function ContactInfo() {
           </ContactRow>
 
           <ContactRow icon={<Phone className="size-4" />} label="Telefon">
-            <Link href={PHONE_HREF} className="hover:text-gray-900">
+            <Link href={PHONE_HREF} className="hover:text-gray-900 underline">
               {PHONE}
             </Link>
           </ContactRow>
 
           <ContactRow icon={<Mail className="size-4" />} label="E-post">
-            <Link href={`mailto:${EMAIL}`} className="hover:text-gray-900">
+            <Link
+              href={`mailto:${EMAIL}`}
+              className="hover:text-gray-900 underline"
+            >
               {EMAIL}
             </Link>
           </ContactRow>
@@ -61,8 +64,8 @@ export default function ContactInfo() {
         <p className="text-sm text-gray-500">Ring oss direkte for rask hjelp</p>
         <Button asChild size="lg" className="mt-2 w-full rounded-md">
           <Link href={PHONE_HREF}>
-            <Phone className="size-4" />
             {PHONE}
+            <Phone />
           </Link>
         </Button>
       </div>

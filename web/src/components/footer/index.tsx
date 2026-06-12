@@ -8,8 +8,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex flex-col gap-3">
-            <div>
+            <div className="flex flex-col gap-1">
               <Logo variant="small" />
+              <p className="text-xs text-gray-400">Org.nr: 922 629 102</p>
             </div>
           </div>
           <div>
@@ -70,11 +71,21 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Phone className="w-4 h-4  shrink-0" />
-                <span>+47 471 77 466</span>
+                <a
+                  className="underline text-sm text-gray-600 hover:text-gray-900"
+                  href="tel:+4747177466"
+                >
+                  47 17 74 66
+                </a>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Mail className="w-4 h-4  shrink-0" />
-                <span>post@vaktmesterutleie.no</span>
+                <a
+                  className="underline text-sm text-gray-600 hover:text-gray-900"
+                  href="mailto:post@vaktmesterutleie.no"
+                >
+                  post@vaktmesterutleie.no
+                </a>
               </div>
             </div>
           </div>
@@ -162,7 +173,6 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <p className="text-xs text-gray-400">Org.nr: 922 629 102</p>
           </div>
         </div>
       </div>

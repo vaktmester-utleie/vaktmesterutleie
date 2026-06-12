@@ -5,9 +5,7 @@ export type Service = {
   href: string
   title: string
   image: ImageWithAlt
-  tags: string[]
   description: string
-  cta: string
 }
 
 export type ImageWithAlt = {
@@ -22,7 +20,6 @@ type Slug = {
 export type Category = {
   _id: string
   title: string
-  image: ImageWithAlt
   slug: Slug
 }
 

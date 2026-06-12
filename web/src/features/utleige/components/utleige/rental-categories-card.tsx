@@ -2,8 +2,7 @@ import { client } from '@/sanity/client'
 import { CATEGORY_QUERY } from '@/sanity/queries'
 import { Category } from '@/sanity/types'
 import Link from 'next/link'
-import { Image } from 'next-sanity/image'
-import { urlFor } from '@/sanity/image'
+
 import { ArrowRight } from 'lucide-react'
 
 export default async function RentalCategoryCard() {
@@ -14,34 +13,20 @@ export default async function RentalCategoryCard() {
       {categories.map((item) => (
         <li
           key={item._id}
-          className="group relative overflow-hidden rounded-md border"
+          className="group relative overflow-hidden rounded-md bg-neutral-900 transition hover:bg-neutral-800"
         >
-          {item.image ? (
-            <Image
-              className="h-[175px] w-full object-cover transition group-hover:scale-105"
-              src={urlFor(item.image.image).width(800).url()}
-              alt={
-                item.image.alt ? (item.image.alt as string) : 'Alternativ tekst'
-              }
-              width={800}
-              height={400}
-            />
-          ) : (
-            <div className="flex h-[175px] w-full items-center justify-center bg-gray-100">
-              <span className="text-sm text-gray-400">Ingen bilete</span>
+          <div className="flex flex-col justify-between p-6 h-28">
+            <p className="text-2xl font-semibold text-white">{item.title}</p>
+            <div className="flex justify-end">
+              <ArrowRight
+                size={18}
+                className="text-white/60 transition group-hover:translate-x-1 group-focus-within:translate-x-1"
+              />
             </div>
-          )}
-
-          <div className="flex items-center justify-between px-4 py-6">
-            <p className="text-lg font-medium">{item.title}</p>
-            <ArrowRight
-              size={16}
-              className="transition group-hover:translate-x-1 group-focus-within:translate-x-1"
-            />
           </div>
 
           <Link
-            className="absolute inset-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-inset"
+            className="absolute inset-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-inset"
             aria-label={`Gå til ${item.title}`}
             href={`/utleige/${item.slug.current}`}
           />

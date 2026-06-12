@@ -20,13 +20,11 @@ export default function CTA({ subtitle, title, description }: Props) {
           <Button asChild className="w-full sm:w-auto">
             <Link className="flex gap-4 px-4" href="/kontakt">
               <span>Send førespurnad</span>
-              <ArrowRight />
             </Link>
           </Button>
           <Button variant="outline" asChild className="w-full sm:w-auto">
             <Link className="flex gap-4 px-4" href="tel:+4747177466">
-              <span>Ring oss direkte</span>
-              <Phone />
+              <span>Ring oss</span>
             </Link>
           </Button>
         </Container>

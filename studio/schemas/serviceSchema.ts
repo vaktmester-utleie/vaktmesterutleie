@@ -1,4 +1,4 @@
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export const serviceSchema = defineType({
   name: 'service',
@@ -18,12 +18,5 @@ export const serviceSchema = defineType({
       title: 'Href',
       type: 'string',
     }),
-    defineField({
-      name: 'tags',
-      title: 'Taggar',
-      type: 'array',
-      of: [defineArrayMember({ type: 'string' })],
-    }),
-    defineField({ name: 'cta', title: 'Knapptekst', type: 'string' }),
   ],
 })
