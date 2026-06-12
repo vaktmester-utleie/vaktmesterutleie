@@ -12,9 +12,9 @@ export default function Header() {
   const onClose = () => setOpen(false)
   const onOpen = () => setOpen(true)
   return (
-    <header className="border-b  py-4 px-4">
+    <header className="border-b  py-6 px-4">
       <Container className="max-w-6xl w-full mx-auto flex justify-between items-center">
-        <Logo />
+        <Logo variant="small" />
 
         <div>
           <DesktopNavigation />
