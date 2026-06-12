@@ -23,6 +23,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 }
 
 import { Metadata } from 'next'
+import { Button } from '@/components/ui/button'
 
 export async function generateMetadata({
   params,
@@ -79,7 +80,10 @@ export default async function ProjectPage({
 
       {/* FULL BREDDE slider */}
       {hasSlider && (
-        <Comparison className="aspect-[21/9] w-full" mode="drag">
+        <Comparison
+          className="aspect-[21/9] h-[30dvh] md:h-auto w-full"
+          mode="drag"
+        >
           <ComparisonItem position="left">
             <Image
               src={urlFor(project.beforeImage!.image).width(2000).url()}
@@ -132,19 +136,16 @@ export default async function ProjectPage({
           )}
         </div>
 
-        {/* tittel */}
         <h1 className="mt-5 text-5xl font-bold tracking-tight text-neutral-900">
           {project.title}
         </h1>
 
-        {/* beskriving */}
         {project.description && (
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-600">
             {project.description}
           </p>
         )}
 
-        {/* CTA */}
         <div className="mt-12 flex flex-col items-start justify-between gap-4 rounded-md bg-neutral-100 p-6 sm:flex-row sm:items-center">
           <div>
             <p className="text-lg font-semibold">Ønskjer du liknande arbeid?</p>
@@ -152,12 +153,14 @@ export default async function ProjectPage({
               Me gjev deg eit uforpliktande tilbod innan 24 timar.
             </p>
           </div>
-          <Link
-            href="/kontakt"
-            className="inline-flex items-center gap-2 rounded-md bg-neutral-900 px-5 py-3 text-white transition hover:bg-neutral-800"
-          >
-            Ta kontakt <ArrowRight size={16} />
-          </Link>
+          <Button asChild>
+            <Link
+              href="/kontakt"
+              className="inline-flex items-center gap-2 rounded-md bg-neutral-900 px-5 py-3 text-white transition hover:bg-neutral-800"
+            >
+              Ta kontakt <ArrowRight size={16} />
+            </Link>
+          </Button>
         </div>
       </div>
     </article>
