@@ -57,7 +57,9 @@ export default async function Page({ searchParams }: SearchParams) {
       <Section constraint>
         <Container className="flex py-4 gap-8 justify-between">
           <FormWrapper tag={tag} />
-          <ContactInfo />
+          <div className="h-full hidden md:block">
+            <ContactInfo />
+          </div>
         </Container>
       </Section>
     </Section>

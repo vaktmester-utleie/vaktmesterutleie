@@ -43,6 +43,13 @@ export const rentalSchema = defineType({
       title: 'Spesifikasjonar',
       validation: (r) => r.required(),
     }),
-    defineField({ name: 'image', type: 'imageWithAlt', title: 'Bilete' }),
+    defineField({
+      name: 'image',
+      type: 'imageWithAlt',
+      title: 'Bilete',
+      validation(rule, context) {
+        rule.required()
+      },
+    }),
   ],
 })

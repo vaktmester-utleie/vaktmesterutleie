@@ -4,10 +4,11 @@ import Link from 'next/link'
 
 type Props = {
   variant?: 'large' | 'small'
+  onClose?: () => void
 }
-export default function Logo({ variant = 'large' }: Props) {
+export default function Logo({ variant = 'large', onClose }: Props) {
   return (
-    <Link href={'/'}>
+    <Link onClick={onClose} href={'/'}>
       <Image
         className={cn(' aspect-auto object-cover', {
           'max-w-[100px]': variant === 'small',
