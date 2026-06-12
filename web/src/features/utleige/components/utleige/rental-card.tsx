@@ -7,6 +7,8 @@ import { ArrowRight } from 'lucide-react'
 import { Image } from 'next-sanity/image'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import Container from '@/components/wrapper/container'
+import { Button } from '@/components/ui/button'
 
 export default async function RentalCard({ slug }: { slug: string }) {
   const item: Rental[] = await client.fetch(RENTAL_BY_CATEGORY_QUERY, { slug })
