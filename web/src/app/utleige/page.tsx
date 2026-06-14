@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Utleige',
   description:
-    'Lei tilhengar, stillas, stiegar og verktøy til gode prisar. Fleksible leigeavtalar og rask utlevering.',
+    'Lei tilhengar, stillas, stigar og verktøy til gode prisar. Fleksible leigeavtalar og rask utlevering.',
 }
 export default function Page() {
   return (

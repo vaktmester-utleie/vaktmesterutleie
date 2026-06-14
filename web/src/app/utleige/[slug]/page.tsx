@@ -32,7 +32,7 @@ export default async function Page({ params }: Params) {
             <PageHeader
               label="utleigekatalog"
               title="Lei utstyr enkelt og rimeleg"
-              subtitle="Tilhengarar, stillas, stiegar og verktøy til gode prisar. Hent sjølv eller avtal levering."
+              subtitle="Tilhengarar, stillas, stigar og verktøy til gode prisar. Hent sjølv eller avtal levering."
             />
             <PageBreadcrumb />
           </Section>
@@ -61,7 +61,7 @@ export default async function Page({ params }: Params) {
           <PageHeader
             label="utleigekatalog"
             title="Lei utstyr enkelt og rimeleg"
-            subtitle="Tilhengarar, stillas, stiegar og verktøy til gode prisar. Hent sjølv eller avtal levering."
+            subtitle="Tilhengarar, stillas, stigar og verktøy til gode prisar. Hent sjølv eller avtal levering."
           />
           <PageBreadcrumb />
         </Section>

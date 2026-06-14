@@ -5,7 +5,7 @@ export default function Hero() {
     <Container className="flex flex-col gap-6 max-w-lg">
       <h1 className="hero-title">Lei utstyr enkelt og rimeleg.</h1>
       <h2 className="hero-subtitle">
-        Tilhengarar, stillas, stiegar og verktøy til gode prisar. Hent sjølv i
+        Tilhengarar, stillas, stigar og verktøy til gode prisar. Hent sjølv i
         Valestrandfossen eller avtal levering
       </h2>
     </Container>
