@@ -52,4 +52,18 @@ export const rentalSchema = defineType({
       },
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'image.image',
+      available: 'available',
+    },
+    prepare(selection) {
+      return {
+        title: selection.title,
+        media: selection.media,
+        subtitle: selection.available ? '✓ Ledig' : '✗ Opptatt',
+      }
+    },
+  },
 })
