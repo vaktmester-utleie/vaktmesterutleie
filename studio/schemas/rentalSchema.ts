@@ -39,8 +39,8 @@ export const rentalSchema = defineType({
     }),
     defineField({
       name: 'specs',
-      type: 'string',
-      title: 'Spesifikasjonar',
+      type: 'text',
+      title: 'Beskrivelse',
       validation: (r) => r.required(),
     }),
     defineField({
