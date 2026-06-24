@@ -64,7 +64,7 @@ export default async function RentalCard({ slug }: { slug: string }) {
                 {(data.pricePerWeek ?? 0) > 0 && (
                   <p>
                     <span className="text-md">{data.pricePerWeek}</span>{' '}
-                    <span className="text-sm text-white/70">kr / vekeg</span>
+                    <span className="text-sm text-white/70">kr / veke</span>
                   </p>
                 )}
               </div>
